@@ -42,8 +42,6 @@ public class MainActivity extends AppCompatActivity {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // Permission was granted, start navigation
                 startNavigation();
-            } else {
-                // Permission denied, you can disable the functionality that depends on this permission.
             }
         }
     }
@@ -60,8 +58,6 @@ public class MainActivity extends AppCompatActivity {
             Intent webIntent = new Intent(Intent.ACTION_VIEW, webUri);
             if (webIntent.resolveActivity(getPackageManager()) != null) {
                 startActivity(webIntent);
-            } else {
-                // Inform the user that no web browser is available if this is the case
             }
         }
     }
